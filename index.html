@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Revamping Data Storage for Modern Needs</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bookman+Old+Style&display=swap" rel="stylesheet">
     <style>
         /* General Body Styling */
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Bookman Old Style', serif;
             background-color: #f4f4f9;
             color: #333;
             margin: 0;
@@ -94,8 +94,15 @@
 
         h2 {
             color: #1e88e5;
-            font-size: 1.6em;
+            font-size: 1.8em;
             margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        h2 img {
+            height: 30px;
+            margin-right: 15px; /* Space between image and heading text */
         }
 
         h3 {
@@ -175,7 +182,7 @@
     <!-- Main Content -->
     <main>
         <section id="overview" class="active">
-            <h2>1. Problem Understanding and Overview</h2>
+            <h2><img src="https://via.placeholder.com/30" alt="Overview Icon">1. Problem Understanding and Overview</h2>
             <div class="text-img-container">
                 <div>
                     <p>The company’s current data storage setup cannot meet growing data volume and complexity requirements. Key issues include:</p>
@@ -191,13 +198,13 @@
         </section>
 
         <section id="solution">
-            <h2>2. Proposed Solution</h2>
+            <h2><img src="https://via.placeholder.com/30" alt="Solution Icon">2. Proposed Solution</h2>
             <p>The proposed solution leverages Oracle Cloud Infrastructure (OCI) storage options, including Object Storage, Block Storage, and File Storage, to modernize data architecture.</p>
             <img src="https://via.placeholder.com/500" alt="Solution Image" class="section-img">
         </section>
 
         <section id="features">
-            <h2>3. Key Features of the Solution</h2>
+            <h2><img src="https://via.placeholder.com/30" alt="Features Icon">3. Key Features of the Solution</h2>
             <ul>
                 <li><strong>Auto-Scaling Storage:</strong> Adapts to changing data demands automatically, reducing manual intervention and cost.</li>
                 <li><strong>High Availability and Resilience:</strong> Multi-region replication ensures data availability and redundancy for maximum uptime.</li>
@@ -207,7 +214,7 @@
         </section>
 
         <section id="outcomes">
-            <h2>4. Expected Outcomes and Benefits</h2>
+            <h2><img src="https://via.placeholder.com/30" alt="Outcomes Icon">4. Expected Outcomes and Benefits</h2>
             <ul>
                 <li>Reduced Costs through optimized cloud storage and elimination of on-premise infrastructure.</li>
                 <li>Improved Data Accessibility for faster data retrieval and support for business intelligence needs.</li>
@@ -217,7 +224,7 @@
         </section>
 
         <section id="contact">
-            <h2>5. Contact Information</h2>
+            <h2><img src="https://via.placeholder.com/30" alt="Contact Icon">5. Contact Information</h2>
             <ul>
                 <li><strong>Email:</strong> <a href="mailto:naveenkumartrp22@gmail.com">naveenkumartrp22@gmail.com</a></li>
                 <li><strong>Phone:</strong> 814722114039</li>
@@ -235,19 +242,15 @@
     </footer>
 
     <script>
+        // Tab switching functionality
         const tabs = document.querySelectorAll('nav a');
         const sections = document.querySelectorAll('main section');
 
         tabs.forEach(tab => {
             tab.addEventListener('click', () => {
-                // Remove active class from all tabs
                 tabs.forEach(t => t.classList.remove('active'));
-                // Add active class to the clicked tab
                 tab.classList.add('active');
-
-                // Hide all sections
                 sections.forEach(section => section.classList.remove('active'));
-                // Show the related section
                 const target = tab.getAttribute('data-tab');
                 document.getElementById(target).classList.add('active');
             });
