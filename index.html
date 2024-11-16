@@ -13,6 +13,7 @@
             color: #333;
             margin: 0;
             padding: 0;
+            transition: background-color 0.3s ease;
         }
 
         /* Header */
@@ -43,6 +44,7 @@
             display: flex;
             justify-content: center;
             padding: 10px 0;
+            transition: background-color 0.3s ease;
         }
 
         nav a {
@@ -52,7 +54,7 @@
             font-size: 1.1em;
             margin: 0 10px;
             border-radius: 5px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
@@ -116,6 +118,7 @@
             padding: 20px;
             margin-top: 30px;
             border-radius: 8px;
+            transition: opacity 0.5s ease;
         }
 
         .storage-types h2 {
@@ -138,16 +141,35 @@
             margin: 10px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
         }
 
-        .storage-types img {
-            width: 50px;
-            height: auto;
-            margin-bottom: 10px;
+        .storage-types li:hover {
+            transform: scale(1.05);
         }
 
         .storage-types li h3 {
             color: #1565c0;
+        }
+
+        /* Tabs functionality */
+        .tab-content {
+            display: none;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Fade-in Animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -161,17 +183,17 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="#overview" class="active">Overview</a>
-        <a href="#solution">Solution</a>
-        <a href="#features">Features</a>
-        <a href="#storage">Storage Types</a>
-        <a href="#outcomes">Outcomes</a>
-        <a href="#contact">Contact</a>
+        <a href="#overview" class="active" onclick="changeTab('overview')">Overview</a>
+        <a href="#solution" onclick="changeTab('solution')">Solution</a>
+        <a href="#features" onclick="changeTab('features')">Features</a>
+        <a href="#storage" onclick="changeTab('storage')">Storage Types</a>
+        <a href="#outcomes" onclick="changeTab('outcomes')">Outcomes</a>
+        <a href="#contact" onclick="changeTab('contact')">Contact</a>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <section id="overview">
+        <section id="overview" class="tab-content active">
             <h2>1. Problem Understanding and Overview</h2>
             <p>The company’s current data storage setup cannot meet growing data volume and complexity requirements. Key issues include:</p>
             <ul>
@@ -182,12 +204,12 @@
             </ul>
         </section>
 
-        <section id="solution">
+        <section id="solution" class="tab-content">
             <h2>2. Proposed Solution</h2>
             <p>The proposed solution leverages Oracle Cloud Infrastructure (OCI) storage options, including Object Storage, Block Storage, and File Storage, to modernize data architecture.</p>
         </section>
 
-        <section id="features">
+        <section id="features" class="tab-content">
             <h2>3. Key Features of the Solution</h2>
             <ul>
                 <li><strong>Auto-Scaling Storage:</strong> Adapts to changing data demands automatically, reducing manual intervention and cost.</li>
@@ -196,34 +218,20 @@
             </ul>
         </section>
 
-        <!-- Storage Types Section -->
-        <section id="storage" class="storage-types">
+        <section id="storage" class="tab-content">
             <h2>4. Types of Data Storage</h2>
             <ul>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Cloud_storage_icon.svg/512px-Cloud_storage_icon.svg.png" alt="Cloud Storage">
-                    <h3>Cloud Storage</h3>
-                    <p>Highly scalable storage that allows businesses to store data online for easy access, sharing, and collaboration. Examples: AWS S3, Google Cloud Storage.</p>
-                </li>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Hard_disk_drive_icon.svg/1024px-Hard_disk_drive_icon.svg.png" alt="Hard Drive">
-                    <h3>Hard Disk Drives (HDD)</h3>
-                    <p>Traditional form of storage that stores data on rotating disks. Cost-effective but slower than SSDs. Suitable for long-term storage.</p>
-                </li>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/SSD_icon.svg/1024px-SSD_icon.svg.png" alt="SSD Storage">
-                    <h3>Solid State Drives (SSD)</h3>
-                    <p>Faster and more reliable than HDDs, SSDs use flash memory to store data. They are ideal for high-speed data retrieval and critical applications.</p>
-                </li>
-                <li>
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Optical_drive_icon.svg" alt="Optical Storage">
-                    <h3>Optical Storage</h3>
-                    <p>Data stored on optical media like CDs, DVDs, and Blu-ray discs. Primarily used for archiving and media distribution.</p>
-                </li>
+                <li><h3>Relational Databases</h3> - Such as MySQL or PostgreSQL</li>
+                <li><h3>Document-Oriented Databases</h3> - Such as MongoDB or Firebase</li>
+                <li><h3>Cloud-Based Services</h3> - Such as Amazon S3, Google Cloud Storage, Dropbox, or Apple's iCloud</li>
+                <li><h3>Local Hard Drives</h3> - A common type of storage that's great for storing documents, pictures, and audio files</li>
+                <li><h3>Network Attached Storage (NAS)</h3> - An external hard drive that connects to the internet via your router</li>
+                <li><h3>Virtual Machines</h3> - Allow you to store data on a remote server, giving users access from anywhere with an internet connection</li>
+                <li><h3>IndexedDB</h3> - A browser-based database system that can store complex related data, such as videos and images</li>
             </ul>
         </section>
 
-        <section id="outcomes">
+        <section id="outcomes" class="tab-content">
             <h2>5. Expected Outcomes and Benefits</h2>
             <ul>
                 <li>Reduced Costs through optimized cloud storage and elimination of on-premise infrastructure.</li>
@@ -232,7 +240,7 @@
             </ul>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="tab-content">
             <h2>6. Contact Information</h2>
             <ul>
                 <li><strong>Email:</strong> <a href="mailto:naveenkumartrp22@gmail.com">naveenkumartrp22@gmail.com</a></li>
@@ -248,5 +256,22 @@
         <p>&copy; 2024 Revamping Data Storage. All rights reserved.</p>
         <img src="https://trp.srmtrichy.edu.in/wp-content/uploads/2021/12/TRP-logo-copy.png" alt="Logo Right" class="logo">
     </footer>
+
+    <script>
+        function changeTab(tabId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.tab-content');
+            sections.forEach(section => section.classList.remove('active'));
+
+            // Remove active class from all tabs
+            const links = document.querySelectorAll('nav a');
+            links.forEach(link => link.classList.remove('active'));
+
+            // Show the selected section and highlight the active tab
+            document.getElementById(tabId).classList.add('active');
+            const activeLink = document.querySelector(`nav a[href="#${tabId}"]`);
+            activeLink.classList.add('active');
+        }
+    </script>
 </body>
 </html>
