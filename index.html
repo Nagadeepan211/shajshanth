@@ -53,10 +53,7 @@
             margin: 0 10px;
             border-radius: 5px;
             transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #0d47a1;
+            cursor: pointer;
         }
 
         nav a.active {
@@ -65,13 +62,16 @@
         }
 
         /* Main Content */
-        main {
-            max-width: 1100px;
-            margin: 20px auto;
+        main section {
+            display: none;
             padding: 20px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        main section.active {
+            display: block;
         }
 
         h2, h3 {
@@ -120,17 +120,17 @@
     </header>
 
     <!-- Navigation Bar -->
-    <nav>
-        <a href="#overview" class="active">Overview</a>
-        <a href="#solution">Solution</a>
-        <a href="#features">Features</a>
-        <a href="#outcomes">Outcomes</a>
-        <a href="#contact">Contact</a>
+    <nav id="tabs">
+        <a data-tab="overview" class="active">Overview</a>
+        <a data-tab="solution">Solution</a>
+        <a data-tab="features">Features</a>
+        <a data-tab="outcomes">Outcomes</a>
+        <a data-tab="contact">Contact</a>
     </nav>
 
     <!-- Main Content -->
     <main>
-        <section id="overview">
+        <section id="overview" class="active">
             <h2>1. Problem Understanding and Overview</h2>
             <p>The company’s current data storage setup cannot meet growing data volume and complexity requirements. Key issues include:</p>
             <ul>
@@ -180,5 +180,25 @@
         <p>&copy; 2024 Revamping Data Storage. All rights reserved.</p>
         <img src="https://trp.srmtrichy.edu.in/wp-content/uploads/2021/12/TRP-logo-copy.png" alt="Logo Right" class="logo">
     </footer>
+
+    <script>
+        const tabs = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('main section');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to the clicked tab
+                tab.classList.add('active');
+
+                // Hide all sections
+                sections.forEach(section => section.classList.remove('active'));
+                // Show the related section
+                const target = tab.getAttribute('data-tab');
+                document.getElementById(target).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
