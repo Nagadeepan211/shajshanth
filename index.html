@@ -9,55 +9,82 @@
         /* General Body Styling */
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #ffab00;
+            background-color: #eaf0f6;
             color: #333;
             margin: 0;
             padding: 0;
             display: flex;
+            flex-direction: column;
             height: 100vh;
         }
 
-        /* Sidebar (Tabs on the Left) */
-        aside {
-            width: 250px;
-            background-color: #ff6f00;
+        /* Header */
+        header {
+            background-color: #003f7d;
             color: white;
             padding: 20px;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header .logo {
+            height: 60px;
+            width: auto;
+        }
+
+        header h1 {
+            font-size: 1.8em;
+            text-align: center;
+            flex: 1;
+            margin: 0;
+        }
+
+        /* Sidebar Navigation */
+        aside {
+            width: 250px;
+            background-color: #003f7d;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 15px;
+            height: calc(100vh - 120px); /* Adjust for header/footer height */
+            overflow-y: auto;
         }
 
         aside a {
             color: white;
             text-decoration: none;
-            font-size: 1.2em;
+            font-size: 1.1em;
             padding: 10px 15px;
             border-radius: 5px;
             transition: background-color 0.3s ease;
         }
 
         aside a:hover {
-            background-color: #d45700;
+            background-color: #00509e;
         }
 
         aside a.active {
             background-color: white;
-            color: #ff6f00;
+            color: #003f7d;
         }
 
-        /* Content Area */
+        /* Main Content */
         main {
             flex: 1;
             padding: 20px;
-            background: white;
+            background: #ffffff;
             overflow-y: auto;
         }
 
         /* Section Headings */
         h2, h3 {
-            color: #ff6f00;
+            color: #003f7d;
         }
 
         /* Unordered List */
@@ -68,23 +95,39 @@
 
         li {
             margin-bottom: 10px;
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         /* Footer */
         footer {
-            margin-top: 20px;
+            background-color: #003f7d;
+            color: white;
             text-align: center;
             padding: 10px;
-            background-color: #ff6f00;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        footer .logo {
+            height: 30px;
+            width: auto;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <img src="https://www.naanmudhalvan.tn.gov.in/_nuxt/img/logo.13a0474.png" alt="Logo Left" class="logo">
+        <h1>Revamping Data Storage for Modern Needs</h1>
+        <img src="https://trp.srmtrichy.edu.in/wp-content/uploads/2021/12/TRP-logo-copy.png" alt="Logo Right" class="logo">
+    </header>
+
     <!-- Sidebar Navigation -->
     <aside>
         <h2>Navigation</h2>
@@ -143,7 +186,9 @@
 
     <!-- Footer -->
     <footer>
+        <img src="https://www.naanmudhalvan.tn.gov.in/_nuxt/img/logo.13a0474.png" alt="Logo Left" class="logo">
         <p>&copy; 2024 Revamping Data Storage. All rights reserved.</p>
+        <img src="https://trp.srmtrichy.edu.in/wp-content/uploads/2021/12/TRP-logo-copy.png" alt="Logo Right" class="logo">
     </footer>
 </body>
 </html>
