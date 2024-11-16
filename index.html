@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Revamping Data Storage for Modern Needs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         /* General Body Styling */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
             color: #333;
             margin: 0;
@@ -23,6 +24,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         header .logo {
@@ -31,7 +33,7 @@
         }
 
         header h1 {
-            font-size: 1.8em;
+            font-size: 2em;
             margin: 0;
             flex: 1;
             text-align: center;
@@ -48,7 +50,7 @@
         nav a {
             color: white;
             text-decoration: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             font-size: 1.1em;
             margin: 0 10px;
             border-radius: 5px;
@@ -61,21 +63,43 @@
             color: #1565c0;
         }
 
+        nav a:hover {
+            background-color: #0d47a1;
+        }
+
         /* Main Content */
-        main section {
-            display: none;  /* Hide all sections initially */
+        main {
+            max-width: 1200px;
+            margin: 20px auto;
             padding: 20px;
             background: white;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        main section.active {
-            display: block;  /* Show active section */
+        main section {
+            display: none;  /* Hide all sections initially */
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        h2, h3 {
+        main section.active {
+            display: block;
+            transform: scale(1.02);  /* Slight zoom effect for active section */
+        }
+
+        h2 {
             color: #1e88e5;
+            font-size: 1.6em;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            color: #1565c0;
         }
 
         ul {
@@ -85,7 +109,27 @@
 
         li {
             margin-bottom: 10px;
-            font-size: 1em;
+            font-size: 1.1em;
+        }
+
+        /* Adding space for images */
+        .section-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .text-img-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .text-img-container img {
+            max-width: 45%;
+            border-radius: 8px;
         }
 
         /* Footer */
@@ -132,18 +176,24 @@
     <main>
         <section id="overview" class="active">
             <h2>1. Problem Understanding and Overview</h2>
-            <p>The company’s current data storage setup cannot meet growing data volume and complexity requirements. Key issues include:</p>
-            <ul>
-                <li>Limited scalability</li>
-                <li>Inefficient workflows</li>
-                <li>Security vulnerabilities</li>
-                <li>Challenges in maintaining regulatory compliance</li>
-            </ul>
+            <div class="text-img-container">
+                <div>
+                    <p>The company’s current data storage setup cannot meet growing data volume and complexity requirements. Key issues include:</p>
+                    <ul>
+                        <li>Limited scalability</li>
+                        <li>Inefficient workflows</li>
+                        <li>Security vulnerabilities</li>
+                        <li>Challenges in maintaining regulatory compliance</li>
+                    </ul>
+                </div>
+                <img src="https://via.placeholder.com/500" alt="Overview Image" class="section-img">
+            </div>
         </section>
 
         <section id="solution">
             <h2>2. Proposed Solution</h2>
             <p>The proposed solution leverages Oracle Cloud Infrastructure (OCI) storage options, including Object Storage, Block Storage, and File Storage, to modernize data architecture.</p>
+            <img src="https://via.placeholder.com/500" alt="Solution Image" class="section-img">
         </section>
 
         <section id="features">
@@ -153,6 +203,7 @@
                 <li><strong>High Availability and Resilience:</strong> Multi-region replication ensures data availability and redundancy for maximum uptime.</li>
                 <li><strong>Built-in Compliance and Security Monitoring:</strong> OCI’s integrated security framework ensures continuous compliance and data protection.</li>
             </ul>
+            <img src="https://via.placeholder.com/500" alt="Features Image" class="section-img">
         </section>
 
         <section id="outcomes">
@@ -162,6 +213,7 @@
                 <li>Improved Data Accessibility for faster data retrieval and support for business intelligence needs.</li>
                 <li>Enhanced Agility in decision-making due to quick access to reliable data.</li>
             </ul>
+            <img src="https://via.placeholder.com/500" alt="Outcomes Image" class="section-img">
         </section>
 
         <section id="contact">
@@ -171,6 +223,7 @@
                 <li><strong>Phone:</strong> 814722114039</li>
                 <li><strong>Office Address:</strong> B.E. Mechanical Engineering College, SRM TRP Engineering College</li>
             </ul>
+            <img src="https://via.placeholder.com/500" alt="Contact Image" class="section-img">
         </section>
     </main>
 
